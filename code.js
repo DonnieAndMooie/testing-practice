@@ -48,4 +48,21 @@ function nextCharacter(character){
     }
 }
 
-export {capitalize, reverseString, calculator, caesarCipher}
+function analyzeArray(array){
+    let object = {}
+    let total = 0
+    for (const i of array){
+        total += i
+    }
+    object.average = total / array.length
+
+    const min = array.reduce((a,b) => Math.min(a,b))
+    const max = array.reduce((a,b) => Math.max(a,b))
+    object.min = min
+    object.max = max
+    object.length = array.length
+    console.log(object)
+    return object
+}
+
+export {capitalize, reverseString, calculator, caesarCipher, analyzeArray}

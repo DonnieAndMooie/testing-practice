@@ -1,4 +1,4 @@
-import {capitalize, reverseString, calculator, caesarCipher} from './code.js'
+import {capitalize, reverseString, calculator, caesarCipher, analyzeArray} from './code.js'
 
 test("Lowercase string gets capitalized", () => {{
     expect(capitalize("hello")).toBe("Hello")
@@ -52,3 +52,10 @@ test("Punctuation", () => {
     expect(caesarCipher("abc.de*fg+h", 1)).toBe("bcd.ef*gh+i")
 })
 
+test("Small Numbers", () => {
+    expect(analyzeArray([1,2,4,8,10])).toStrictEqual({average: 5, min: 1, max: 10, length: 5})
+})
+
+test("Big Numbers", () => {
+    expect(analyzeArray([100,250,420,520,180])).toStrictEqual({average: 294, min: 100, max: 520, length: 5})
+})
