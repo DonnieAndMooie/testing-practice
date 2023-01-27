@@ -1,4 +1,4 @@
-import {capitalize, reverseString} from './code.js'
+import {capitalize, reverseString, calculator} from './code.js'
 
 test("Lowercase string gets capitalized", () => {{
     expect(capitalize("hello")).toBe("Hello")
@@ -20,3 +20,18 @@ test("String with symbols reverses", () => {
     expect(reverseString("H*25aa-b?")).toBe("?b-aa52*H")
 })
 
+test("Adds numbers", () => {
+    expect(calculator.add(1,2)).toBe(3)
+})
+
+test("Subtracts numbers", () => {
+    expect(calculator.subtract(10,2)).toBe(8)
+})
+
+test("Divides numbers", () => {
+    expect(calculator.divide(20,2)).toBe(10)
+})
+
+test("Multiplies numbers", () => {
+    expect(calculator.multiply(5,3)).toBe(15)
+})
