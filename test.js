@@ -1,4 +1,4 @@
-import {capitalize, reverseString, calculator} from './code.js'
+import {capitalize, reverseString, calculator, caesarCipher} from './code.js'
 
 test("Lowercase string gets capitalized", () => {{
     expect(capitalize("hello")).toBe("Hello")
@@ -35,3 +35,20 @@ test("Divides numbers", () => {
 test("Multiplies numbers", () => {
     expect(calculator.multiply(5,3)).toBe(15)
 })
+
+test("Cipher on simple string", () => {
+    expect(caesarCipher("abcde", 1)).toBe("bcdef")
+})
+
+test("Wrapping z to a", () => {
+    expect(caesarCipher("zebra", 2)).toBe("bgdtc")
+})
+
+test("Uppercase cipher", () => {
+    expect(caesarCipher("ABCDE", 1)).toBe("BCDEF")
+})
+
+test("Punctuation", () => {
+    expect(caesarCipher("abc.de*fg+h", 1)).toBe("bcd.ef*gh+i")
+})
+
